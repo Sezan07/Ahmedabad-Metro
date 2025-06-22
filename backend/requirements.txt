@@ -1,6 +1,0 @@
-Flask
-flask-cors
-pandas
-geopy
-gunicorn
-transformers
