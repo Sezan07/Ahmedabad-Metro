@@ -19,6 +19,10 @@ source_col = 'Source'
 dest_col = 'Destination'
 fare_col = 'Fare'
 
+@app.route('/')
+def home():
+    return "Backend is running!"
+    
 @app.route('/api/stations', methods=['GET'])
 def get_stations():
     try:
