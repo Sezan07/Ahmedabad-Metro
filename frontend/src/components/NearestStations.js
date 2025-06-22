@@ -109,7 +109,7 @@ const NearestStations = () => {
       setUserLocation([latitude, longitude]);
       setLocationAccuracy(Math.round(accuracy));
       
-      const response = await axios.get('${API_URL}/api/stations/nearby', {
+      const response = await axios.get(`${API_URL}/api/stations/nearby`, {
         params: { lat: latitude, lng: longitude }
       });
       
