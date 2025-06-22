@@ -14,7 +14,7 @@ const RoutesInfo = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch('${API_URL}/api/stations')
+    fetch(`${API_URL}/api/stations`)
       .then(res => res.json())
       .then(data => setStations(data))
       .catch(err => setError('Failed to load stations'));
@@ -42,7 +42,7 @@ const RoutesInfo = () => {
     setRouteDetails(null);
 
     try {
-      const routeResponse = await fetch('${API_URL}/api/route', {
+      const routeResponse = await fetch(`${API_URL}/api/route`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -58,7 +58,7 @@ const RoutesInfo = () => {
 
       const routeData = await routeResponse.json();
 
-      const fareResponse = await fetch('${API_URL}/api/fare', {
+      const fareResponse = await fetch(`${API_URL}/api/fare`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
