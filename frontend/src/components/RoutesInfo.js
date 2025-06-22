@@ -3,6 +3,7 @@ import '../App.css';
 import { GiPathDistance } from "react-icons/gi";
 import { FaSubway } from "react-icons/fa";
 import '../styles/route-planner.css';
+const API_URL = process.env.REACT_APP_API_BASE_URL;
 
 const RoutesInfo = () => {
   const [stations, setStations] = useState([]);
@@ -13,7 +14,7 @@ const RoutesInfo = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/stations')
+    fetch('${API_URL}/api/stations')
       .then(res => res.json())
       .then(data => setStations(data))
       .catch(err => setError('Failed to load stations'));
@@ -41,7 +42,7 @@ const RoutesInfo = () => {
     setRouteDetails(null);
 
     try {
-      const routeResponse = await fetch('http://localhost:5000/api/route', {
+      const routeResponse = await fetch('${API_URL}/api/route', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -57,7 +58,7 @@ const RoutesInfo = () => {
 
       const routeData = await routeResponse.json();
 
-      const fareResponse = await fetch('http://localhost:5000/api/fare', {
+      const fareResponse = await fetch('${API_URL}/api/fare', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
