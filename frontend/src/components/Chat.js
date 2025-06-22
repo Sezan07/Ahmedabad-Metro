@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaPaperPlane, FaRobot, FaUser, FaSync, FaGlobe} from 'react-icons/fa';
 import '../styles/Chat.css';
+const API_URL = process.env.REACT_APP_API_BASE_URL;
 
 const Chat = () => {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ const Chat = () => {
     
       // Fixed endpoint selection - English should use different endpoint than Gujarati
       const endpoint = selectedLanguage === 'gujarati' 
-        ? 'http://localhost:5000/chat_guj'      // Gujarati endpoint
+        ? '${API_URL}/chat_guj'      // Gujarati endpoint
         : 'http://localhost:5000/api/chat';     // English endpoint (fixed)
 
       const response = await fetch(endpoint, {
@@ -142,7 +143,7 @@ const Chat = () => {
   
   const checkGujaratiStatus = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/gujarati/status');
+      const response = await fetch('${API_URL}/api/gujarati/status');
       const data = await response.json();
       return data.available;
     } catch (error) {
