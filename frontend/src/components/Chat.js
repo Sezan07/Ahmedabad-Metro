@@ -95,8 +95,8 @@ const Chat = () => {
     
       // Fixed endpoint selection - English should use different endpoint than Gujarati
       const endpoint = selectedLanguage === 'gujarati' 
-        ? '${API_URL}/chat_guj'      // Gujarati endpoint
-        : 'http://localhost:5000/api/chat';     // English endpoint (fixed)
+        ? `${API_URL}/chat_guj`     // Gujarati endpoint
+        : `${API_URL}/api/chat`;     // English endpoint (fixed)
 
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -143,7 +143,7 @@ const Chat = () => {
   
   const checkGujaratiStatus = async () => {
     try {
-      const response = await fetch('${API_URL}/api/gujarati/status');
+      const response = await fetch(`${API_URL}/api/gujarati/status`);
       const data = await response.json();
       return data.available;
     } catch (error) {
