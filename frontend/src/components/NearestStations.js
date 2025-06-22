@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import axios from 'axios';
 import '../styles/NearestStations.css';
+const API_URL = process.env.REACT_APP_API_BASE_URL;
 
 // Fix leaflet marker icons
 delete L.Icon.Default.prototype._getIconUrl;
@@ -108,7 +109,7 @@ const NearestStations = () => {
       setUserLocation([latitude, longitude]);
       setLocationAccuracy(Math.round(accuracy));
       
-      const response = await axios.get('http://localhost:5000/api/stations/nearby', {
+      const response = await axios.get('${API_URL}/api/stations/nearby', {
         params: { lat: latitude, lng: longitude }
       });
       
