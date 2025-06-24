@@ -69,15 +69,15 @@ def get_fare():
         print(traceback.format_exc())
         return jsonify({"error": f"Fare calculation failed: {str(e)}"}), 400
 
-@app.route('/chat', methods=['POST'])
-@app.route('/api/chat', methods=['POST'])
-def chat():
-    return handle_chat()
+# @app.route('/chat', methods=['POST'])
+# @app.route('/api/chat', methods=['POST'])
+# def chat():
+#     return handle_chat()
 
-@app.route('/chat_guj', methods=['POST'])
-@app.route('/api/chat_guj', methods=['POST'])
-def guj_chat():
-    return handle_guj_chat()
+# @app.route('/chat_guj', methods=['POST'])
+# @app.route('/api/chat_guj', methods=['POST'])
+# def guj_chat():
+#     return handle_guj_chat()
 
 @app.route('/api/stations/nearby', methods=['GET'])
 def get_nearby_stations():
