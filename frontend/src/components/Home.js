@@ -159,13 +159,13 @@ const Home = () => {
                 </div>
               </Link>
               
-              <Link to="/chat" className="access-card">
+              <Link to="/contact" className="access-card">
                 <div className="card-icon">
                   <MdChatBubbleOutline size={28} color="white" />
                 </div>
                 <div className="card-content">
-                  <h4>Chatbot</h4>
-                  <p>Ask Queries</p>
+                  <h4>Contact</h4>
+                  {/* <p>Ask Queries</p> */}
                 </div>
               </Link>
             </div>
