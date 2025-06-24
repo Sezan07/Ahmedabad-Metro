@@ -728,6 +728,7 @@
   .route-header {
     padding: 15px;
     border-radius: 10px;
+    margin-top: 20px;
   }
 
   .header-content h1 {
