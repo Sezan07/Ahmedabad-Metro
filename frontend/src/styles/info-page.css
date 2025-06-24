@@ -596,6 +596,7 @@
   .station-header {
     padding: 15px;
     gap: 10px;
+    margin-top: 20px;
   }
 
   .header-content h1 {
