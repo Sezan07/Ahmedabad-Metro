@@ -23,7 +23,7 @@ function App() {
     // Log environment variable during app load
     console.log("API BASE URL:", process.env.REACT_APP_API_BASE_URL);
 
-    // Dynamically load Botpress scripts
+    // Dynamically load Botpress 
     const injectScript = document.createElement('script');
     injectScript.src = 'https://cdn.botpress.cloud/webchat/v3.0/inject.js';
     injectScript.async = true;
