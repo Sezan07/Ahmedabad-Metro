@@ -426,6 +426,7 @@
   .contact-header {
     padding: 15px; /* Further reduce padding */
     border-radius: 12px; /* Slightly smaller radius */
+    margin-top: 20px;
   }
 
   .header-content h1 {
