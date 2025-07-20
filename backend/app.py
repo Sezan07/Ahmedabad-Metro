@@ -1,8 +1,6 @@
 from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS
-from chatbot import handle_chat, rag_chatbot
 from route import get_all_stations, calculate_route_details
-from guj_chatbot import handle_guj_chat
 import pandas as pd
 import os
 from geopy.distance import geodesic
@@ -39,6 +37,7 @@ def get_route():
     
     if not source or not destination:
         return jsonify({"error": "Missing source or destination"}), 400
+    
     result = calculate_route_details(source, destination)
     
     if result['error']:
@@ -47,7 +46,8 @@ def get_route():
     return jsonify({
         "route": result['route'],
         "interchanges": result['interchanges'],
-        "distance": result['distance']
+        "distance": result['distance'],
+        "instructions": result['instructions']
     })
 
 @app.route('/api/fare', methods=['POST'])
@@ -68,16 +68,6 @@ def get_fare():
         print(f"Fare calculation error: {str(e)}")
         print(traceback.format_exc())
         return jsonify({"error": f"Fare calculation failed: {str(e)}"}), 400
-
-# @app.route('/chat', methods=['POST'])
-# @app.route('/api/chat', methods=['POST'])
-# def chat():
-#     return handle_chat()
-
-# @app.route('/chat_guj', methods=['POST'])
-# @app.route('/api/chat_guj', methods=['POST'])
-# def guj_chat():
-#     return handle_guj_chat()
 
 @app.route('/api/stations/nearby', methods=['GET'])
 def get_nearby_stations():
