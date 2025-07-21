@@ -13,7 +13,7 @@ import StationInfo from './components/StationInfo';
 import Facilities from './components/Facilities';
 import {FaTrain, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import Navbar from './components/Navbar';
-import { Analytics } from "@vercel/analytics/react"
+
 
 // Component to handle scroll to top on route change
 function ScrollToTop() {
