@@ -59,7 +59,7 @@ Build Ahmedabad-Metro from the source and install dependencies:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/AnshBhavsar1654/Ahmedabad-Metro
+git clone https://github.com/Sezan07/Ahmedabad-Metro
 ```
 
 2. **Navigate to the project directory:**
