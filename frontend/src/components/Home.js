@@ -46,11 +46,11 @@ const Home = () => {
             condition: data.weather[0].main
           });
         } else {
-          setTemperature({ current: 32, high: 40, condition: 'Sunny' });
+          setTemperature({ current: 32, high: 90, condition: 'Sunny' });
         }
       } catch (error) {
         console.error('Weather fetch failed:', error);
-        setTemperature({ current: 32, high: 40, condition: 'Sunny' });
+        setTemperature({ current: 32, high: 90, condition: 'Sunny' });
       } finally {
         setIsLoading(false);
       }
